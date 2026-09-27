@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{gensymb}
+\begin{document}
+
+\section{Questions} 
+\begin{enumerate}
+  \item Compute, with a sentence of why: what is sin(210°)? Explain using the circle picture, not a calculator.
+  \item Conversions: 135° in radians? And 7$\pi$/6 in degrees?
+  \item Symmetry: list all angles between 0° and 360° where sin $\theta$ = -1/2.
+  \item Back to the triangle: a right triangle has hypotenuse 13 and an angle of 30°. How long is the side opposite that angle?
+  \item Wave: the tip takes 8 seconds per full rotation. What is the period and frequency of the height graph - and why doesn't the pattern repeat at 4 seconds, even though the tip is at height zero?
+  \item Small angle: estimate sin(0.02) without a calculator. Then say roughly how far off you expect your estimate to be, and why the error is tiny.
+  \item Proof in miniature: give a one-sentence argument for why sin(180° - $\theta$) = sin $\theta$.
+  \item Predict, then check: is sin(60°) bigger or smaller than 1/2? Roughly how big, by eyeballing the circle? Then check yourself against the exact value.
+  \item Blank page, ~next week: from nothing, rebuild the whole arc — rotating tip of a length-1 hypotenuse → sine as the height on the unit circle → why sin $\theta$ $\approx$ $\theta$ for small angles. If you can rebuild it cold, you own it.
+\end{enumerate}
+
+\section{Anwsers}
+\begin{enumerate}
+  \item sin(210$\degree$) = $-\frac{1}{2}$\\This follows from the pattern of sin(30$\degree$) and sin(150$\degree$) = $\frac{1}{2}$, the key difference being a reflection in the x-axis for the latter and a reflection in both axisis on the former, and as we accertained earlier a reflection in the y-axis for sine has no effect on the output, while a reflection on the x-axis moves into negatives.
+  \item 135$\degree$ = $\frac{3\pi}{4}$ \\$\frac{7\pi}{6} = 210\degree$
+  \item Following from question 1, $sin(210\degree) = -\frac{1}{2}$ \\Likewise a reflection in the y-axis shows that $sin(330\degree) = -\frac{1}{2}$ 
+  \item $sin(30\degree) = \frac{O}{13} \\ 13*sin(30\degree) = O \\ O = 13*\frac{\pi}{6}$ \\ The oppersite side length is $\frac{13\pi}{6}$
+  \item The period is 8s; it isn't 4s as the gradient facing the oppersite direction. \\ The frequency $f = \frac{1}{T}$ where $T$ is the period. \\ So $f = \frac{1}{8}$ or $f = \frac{1}{8}Hz$
+  \item $sin(0.02) \approx 0.019$ \\ This is because the change in the height near 0 is much greater than the change in width, so the sine function which captures the change in y (height) nearly captures the arc length. 
+  \item $sin(180\degree - \theta) = sin(\theta)$ : \\ starting at $180\degree$ and moving backwards $\theta$ aligns the y-axis on both sides of the circle. Interestingly adding theta would do the same thing, but swap negative/positive.
+  \item Looks about 0.8, so bigger than a half. \\ $sin(60\degree) = sin(\frac{\pi}{3}) \approx 0.866$
+\end{enumerate}
+
+\end{document}

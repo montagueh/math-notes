@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+%\usepackage{gensymb}
+%\usepackage{microtype}
+\usepackage[margin=3cm]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{enumitem}
+% {left-indent}{space before}{space after}
+\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
+\titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\linespread{1.2}
+\begin{document}
+
+\section{Bijection}
+\subsection{Bijection Problem}
+Consider $\ln : (0,\infty) \to \mathbb{R}$. Is it injective? Is it surjective? Is it bijective?
+\begin{enumerate}
+  \item Let $f(x) = e^{x}$ and $g(x) = \ln(x)$
+    \begin{align*}
+      (f \circ g) &= z \\
+      z       &= e^{\ln(x)} \\
+      \ln(z)  &= \ln(x) = t && \text{(adding var t)} \\
+      e^{t}      &= z = x \\
+      z       &= x \\
+      (g \circ f) &= y \\
+      y       &= \ln(e^{x}) \\
+      e^{y}      &= e^{x} \\
+      y       &= x
+    \end{align*}
+\end{enumerate}
+
+\newpage
+\subsection{Second Attempt}
+Proove $e^{x}$ is injective where $(0, \infty) \to \mathbb{R}$: \\
+$w_{2}>w_{1}$ and $w_{2}-w_{1} > 0$
+\begin{align*}
+  e^{w_{2}} &= e^{w_{1}} \\
+  e^{w_{2}-w_{1}} &= 1 \\
+  w_{2} - w_{1} &= 0 \\
+  \implies w_{2} &= w_{1} \qquad \text{contradiction}
+\end{align*} 
+Proove: $\ln(a) = \ln(b)$
+\begin{align*}
+  \ln(a) &= t \\
+  a      &= e^{t} \\
+  \ln(b) &= t \\
+  b      &= e^{t} \\
+  a      &= b
+\end{align*}
+Proove $\ln(x) = y$ is surjective:
+\begin{align*}
+  \ln(x) &= y \\
+  \implies e^{y} &= x \\
+\end{align*}
+
+\newpage
+\subsection{Questions}
+\begin{enumerate}
+  % Question 1:
+  \item Proof: Let $a$, $b \in \mathbb{R}_{>0}$ such that:
+    \begin{equation}
+      \log_{2}(a) = \log_{2}(b)
+    \end{equation}
+    Raise 2 to the power of each side:
+    \begin{equation}
+      2^{\log_{2}(a)} = 2^{\log_{2}(b)}
+    \end{equation}
+    Since $2^{x}$ and $\log_{2}(x)$ are inverse functions:
+    \begin{equation}
+      a = b
+    \end{equation}
+    since $a = b$, the function $\log_{2}$ is injective. This is provable without previous proofs.
+  
+  \setcounter{equation}{0}
+  % Question 2:
+  \item Is $e^{x} : \mathbb{R} \to \mathbb{R}$ surjective: \\
+    Let $y = e^{x}$. For any value of $y$ where $y \le 0$, so 0 or negative. No value of x can make 
+    $e^{x}$ 0 or negative, so the codomain has to be bound to $\mathbb{R}_{>0}$ for $e^{x}$ to be surjective.
+    Solution: 
+    \begin{equation}
+      e^{x} : \mathbb{R} \to \mathbb{R}_{>0} 
+    \end{equation}
+    
+    \setcounter{equation}{0}
+  % Q3:
+  \item $x^{2} : \mathbb{R} \to \mathbb{R}$ is not injective, as for any $x$, $-x$ produces the same output.
+    Restricting the domain $\mathbb{R}_{\ge 0}$ fixes this. The function also can't output negatives even without a restricted domain so:
+    \begin{equation}
+      x^{2} : \mathbb{R}_{\ge 0} \to \mathbb{R}_{\ge 0} 
+    \end{equation}
+    0 is included because:
+    \begin{equation}
+      0^{2} = 0 
+    \end{equation}
+    So it maps correctly, and one to one. So for this restricted domain and codomain, $x^{2}$ is injective. 
+    The inverse of a square is a square root where:
+    \begin{equation}
+      \sqrt x^{2} = x
+    \end{equation}
+    And the $\sqrt x$ is valid and injective for any $\mathbb{R}_{\ge 0} \to \mathbb{R}_{\ge 0}$,
+    but no real values exist for negatives.
+  
+  \setcounter{equation}{0}
+  \newpage
+  %Q4:
+  \item $x^{3} : \mathbb{R} \to \mathbb{R}$ is bijective because there is an output for each input, including negatives,
+    as odd numbered exponentials always have a leftover negative:
+    \begin{equation}
+      x^{3} = x \cdot x \cdot x
+    \end{equation}
+    sub -1 for x:
+    \begin{equation}
+      -1 \cdot -1 \cdot -1 = -1
+    \end{equation}
+    or -5:
+    \begin{equation}
+      -5 \cdot -5 \cdot -5 = -125
+    \end{equation}
+    This prooves the function is surjective, as all positive and negative values map and continue to do so as $x \to \pm \infty$. \\
+    To prove injectivity, let $a^{3} = b^{3}$ where $b \neq 0$
+    \begin{equation}
+      \implies \left(\frac{a}{b} \right)^{3} = 1
+    \end{equation}
+    \begin{equation}
+      \implies \frac{a}{b} = 1
+    \end{equation}
+    \begin{equation}
+      a = b
+    \end{equation}
+    Because $0^{x}$:
+    \begin{equation}
+    a^{3} \implies a = 0 = b  
+    \end{equation}
+    Therefore $x^{3} : \mathbb{R} \to \mathbb{R}$ is injective. And as it is also surjective, it is therefore bijective. 
+      
+\end{enumerate}
+
+
+\end{document}

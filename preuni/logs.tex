@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+%\usepackage{gensymb}
+%\usepackage{microtype}
+\usepackage[margin=3cm]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{enumitem}
+% {left-indent}{space before}{space after}
+\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
+\titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\linespread{1.2}
+\begin{document}
+
+\section{Log Questions}
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.2em]
+  \item $\log_{3}(81) = 4$
+  \item $\log_{5}(\frac{1}{25}) = -2$ 
+  \item solve for x: \\ $\log_{2}(x) = 5 \\ x = 32$
+  \item solve for b: $\log_{b}(8) = 3 \\ b = 2$
+  \item $\log_{b}(1) = 0$ for every base b because $b^0 = 1$ 
+  \item At a glance $\log_{2}(9)$ can't be true, because no even number can't be multiplied by itself to become odd
+  \item $\log_{2}(0.5) = -1$ 
+\end{enumerate}
+
+\section{Log Rules}
+\subsection{Multiplication}
+If $\log_{b}(a) = m$ and $\log_{b}(c) = n$, what is the $\log_{b}(a \times c)$?
+\begin{gather*}
+  a = b^m \qquad \text{and} \qquad c = b^n \\
+  \begin{aligned}
+    a \times c &= b^m \times b^n = b^{m+n} \\
+    \log_{b}(a \times c) &= m + n
+  \end{aligned}
+\end{gather*}
+
+\subsection{Division}
+If $log_{b}(a) = m$ and $log_{b}(c) = n$, what is the $log_{b}(a \div c)$?
+\begin{gather*}
+  a = b^m \qquad\text{and}\qquad c = b^n \\
+  \begin{aligned}
+    a \div c &= b^m \div b^n = b^{m - n} \\
+    \log_{b}(a \div c) &= m - n
+  \end{aligned}
+\end{gather*}
+
+\subsection{Exponentiation}
+If $\log_{b}(a) = m$, what is $\log_{b}(a^k)$?
+\begin{align*}
+  a &= b^m \\
+  \log_{b}(a^k) &= \log_{b}((a)^k) \\ &= \log_{b}(b^{km}) = km && \text{(sub m for $\log_{b}(a)$ for $a$} \\
+  &= k\log_{b}(a)
+\end{align*}
+
+\section{Log Rules Questions}
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.2em]
+  \item 
+    \begin{align*}
+      \text{a)} \log_{2}(8 \times 16) &= \log_{2}(128) \\
+                       &= 7 \\ 
+      \text{b)} \log_{2}(8 \times 16) &= \log_{2}(8) + \log_{2}(16) \\ 
+                       &= 3 + 4 = 7
+    \end{align*}
+  \item $\log_{3}(27 \times 81) = \log_{3}(27) + \log_{3}(81) = 3 + 4 = 7$
+  \item $\log_{2}(8^5) = 5\log_{2}(8) = 5 \times 3 = 15$
+  \item $\log_{5}(25^3) = 3\log_{5}(25) = 3 \times 2 = 6$
+  \item compress and evaluate: $\log_{2}(8) + \log_{2}(4) = \log_{2}(8 \times 4) = \log_{2}(32) = 5$
+  \item $log_{b}(x^2y^3) = \log_{b}(x^2) + \log_{b}(y^3) = 2\log_{b}(x) + 3\log_{b}(y)$
+  \item a) $\log_{2}(8 + 8) = \log_{2}(16) = 4$ \\ b) $\log_{2}(8) + \log_{2}(8) = 3 + 3 = 6$ \\ Therefore: $\log_{2}(8 + 8) \neq \log_{2}(8) + \log_{2}(8)$
+  \item The rules for logs are derived from the laws for exponents and there are no laws for sums. 
+\end{enumerate}
+
+\end{document}

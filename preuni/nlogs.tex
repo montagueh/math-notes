@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+%\usepackage{gensymb}
+%\usepackage{microtype}
+\usepackage[margin=3cm]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{enumitem}
+% {left-indent}{space before}{space after}
+\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
+\titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\linespread{1.2}
+\begin{document}
+
+\title{Natural logs}
+\author{Montague Hamilton}
+\date{25 September, 2026}
+\maketitle
+
+\section{Understanding Natural Logs}
+\subsection{At 100\% Rate}
+
+\$1 in a bank account, 100\% interest per year:
+\begin{itemize}
+  \item Credited once, end of year: $1 + 1 \cdot 1 = 1 + 1 = \$2$
+  \item Credited twice a year (50\% each half-year), compounding: $(1 + 1 \cdot \frac{1}{2})^{2} = \$2.25$
+  \item Credited three times a year: $(1 + 1 \cdot \frac{1}{3})^{3} \approx \$2.37$
+  \item Credited four times a year: $(1 + 1 \cdot \frac{1}{4})^4 \approx \$2.44$
+\end{itemize}
+This suggests that for any compound interest at 100\% for \$1, compounded $n$ times,
+where $x$ is the interest plus the starting amount:
+\[
+  x = \left(1 + 1 \cdot \frac{1}{n} \right)^{n}
+\]
+\begin{itemize}  
+  \item Plugging in 10: $(1 + 1 \cdot \frac{1}{10})^{10} \approx 2.594$
+  \item 100: $(1 + 1 \cdot \frac{1}{100})^{100} \approx  2.705$
+  \item Plugging in a arbitary high number, say 1000000 into a calculator will get me close 
+  to the number we are converging on: $(1 + 1 \cdot \frac{1}{1000000})^{1000000} \approx 2.718$
+\end{itemize}
+
+\newpage
+\subsection{Changing The Rate}
+For 200\%:
+\[
+  \left( 1 + \frac{2}{n}\right)^{n}
+\]
+
+\begin{itemize}
+  \item At 1: $(1 + \frac{2}{1})^1 = 3$
+  \item At 2: $(1 + \frac{2}{2})^{2} = 4$
+  \item At 10: $(1 + \frac{2}{10})^{10} \approx 6.192$
+  \item At 100: $(1 + \frac{2}{100})^{100} \approx 7.245$
+    At 1000000: $(1 + \frac{2}{1000000}^{1000000} = 7.388$
+\end{itemize}
+It is appartent that $2.718 \cdot 2 \approx 5.4-5.5$, so that's not the relationship.
+It looks to be fairly close to the square, $2.718^{2}$ should be somewhere between $4$ and $9$.
+Into the calculator, and $2.718^{2} \approx 7.388$. This indicates:
+\[
+  x = \left(1 + \frac{r}{n}\right)^{n}
+\]
+Where $x$ is the starting \$1 + compound interest, at rate $r$ compounded $n$ times. 
+If we let $n$ approach infinity where $r = 1$, we know from above that:
+\[
+  \lim_{n\to\infty} = e \approx 2.718
+\]
+So if $e^{2} \approx 7.338$ and the above $(1 + \frac{2}{n})^{n} \approx 7.388$, when $lim_{n\to\infty}$, it indicates:
+\[
+  \left(1 + \frac{r}{n}\right)^{n} = e^{r}
+\]
+To test, we'll try $\frac{1}{2}$: $(1 + \frac{\frac{1}{2}}{1000000})^{1000000}$ \\
+Knowing $e^{\frac{1}{2}} = \sqrt{e}$, $\sqrt{2} \approx 1.41$ and $\sqrt{3} \approx 1.73$ (had to use calculator for that), 
+I can imagine $\sqrt{e} \approx \frac{e}{2}$ (Mistake, 1.141 is not less than half of 2) \\
+Using a calculator, $\sqrt{e} \approx 1.649$ \\
+$1.649 \cdot 2 = 3.298$ so obviously not that case. \\
+Still, to verify $e^{r}$ our equation should converge on 1.649, which it does
+
+\subsection{Questions}
+\begin{enumerate}
+  \item Evaluate three, using the "raised to what" reading: $\ln(e^{3})$, $\ln(1)$, $\ln(\sqrt e)$
+  \item Solve for x: $\ln(x) = 2$
+  \item Solve and explain in one sentence: $e^{x} = 1$
+  \item Application and real world one: $\$100$ at $5\%$ annual interest for $10$ years, compounded continuously. 
+    What's the balance? (Use your law - the anwser is $100 \cdot e^{rt}$; work out what r and t contribute.)
+  \item Why, no computation: why is $\ln(1) = 0$ something you know without a calculator?
+\end{enumerate}
+
+\subsection{Anwsers}
+\begin{enumerate}
+  \item Let $\ln(e^{3}) = x$ and $\ln(\sqrt e) = y$.
+    \begin{align*}
+      \ln(e^{3}) &= x \\
+      e^{x} &= e^{3}
+    \end{align*}
+     Since $e^{n}$ is one-to-one for any $n$:
+    \begin{align*}
+      x = 3
+    \end{align*}
+    For any base b including $\ln$ $\log_{b}(1) = 0$, as $b^{0} = 1$ \\
+    \begin{align*}
+      y &= \ln(\sqrt e) \\
+      e^{y} &= \sqrt e \\
+      \sqrt e &= e^{\frac{1}{2}} \\
+      y &= \frac{1}{2}
+    \end{align*}
+    
+  \item 
+    \begin{align*}
+      \ln(x) &= 2 \\
+      x &= e^{2} \\
+      x &\approx 7.388
+    \end{align*} 
+  \item In $e^{x} = 1$, $x = 0$. This is true for number n: $n^{0} = 1$ 
+  \item $x$ will be our compound interest + original sum (final balance). $i$ will be our inital sum. $n$ will be our compounding number, which will increase to infinity.
+    \begin{align*}
+      x &= i \times \left(1 + \frac{r \times t}{n}\right)^n
+    \end{align*}
+    We know that $r$ goes into the numerator in the function; $t$ (time) goes in there too as we are calculating 5\% 
+    a year over 10 years, so 50\%. In a noncontinuous function, $t$ would also multiply with $n$, 
+    as 12 compounds a year over 10 years would be 120 compounds. $r \cdot t$ is the total interest rate, so:
+    \begin{align*}
+      x &= i \cdot e^{r t} \\
+        &= 100 \cdot e^{0.05 \cdot 10} \\
+      x &= \$164.87
+    \end{align*}
+  \item Any $\log(1) = 0$ including $\ln$ because base (b) $b^{0} = 1$.
+\end{enumerate}
+\end{document}
