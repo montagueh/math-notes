@@ -1,0 +1,204 @@
+
+\documentclass{article}
+
+%--- Document Formatting ---%
+\usepackage{lmodern} % gives you the more modern Latin Modern fonts
+\usepackage[T1]{fontenc} % fontenc provides better and more character encoding
+\usepackage[margin=3cm]{geometry} % geometry allows changing page sizes, orientation and margin
+\usepackage{microtype}
+
+\usepackage{titlesec} % titlesec allows changing the style, spacing and font of chapter, sections and subsections
+% {left-indent}{space before}{space after}
+\titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
+\linespread{1.2}
+
+
+%--- Language ---%
+\usepackage[australian]{babel}
+\usepackage[useregional]{datetime2}
+
+
+%--- Symbols ---%
+\usepackage{amssymb} % amssymb provides symbols, mainly number systems
+\usepackage{cancel} % adds \cancel{x}, allowing striking out derivations
+%\usepackage{siunitx} % used for physics based units
+
+
+%--- Tools and General Formatting ---%
+\usepackage{mathtools} % an extension for amsmath, loads amsmath itself
+\usepackage{amsthm} % improves proof based math
+\usepackage{enumitem} % enumitem gives more control over lists
+
+%\usepackage{graphicx} % use to include images/figures
+%\usepackage{xcolor} % for colour
+%\usepackage[hidelinks]{hyperref} % adds hyperlinks, can sometimes cause issues. Keep last
+%\usepackage{cleveref} % extension for hyperref, auto formatted cross-reference
+
+
+
+\begin{document}
+
+\title{Proofs}
+\author{Montague Hamilton}
+\date{\today}
+\maketitle
+
+\section{Proofs}
+\subsection{Proof by contrapositive}
+Prove: if $n^{2}$ is even, then n is even \\
+Let $n \in \mathbb{Z}$. Direct proof isn't possible, as it requires taking the square root of both sides of $n^{2} = 2k$. Contrapositive proof means if $n$ is odd, then $n^{2}$ must also be odd.
+n = 2k + 1 is odd, because 2k is even, as any number divisible by 2 is even $\frac{2k}{2} = k$, and any even number plus one is odd. To prove $n^{2}$ is odd:
+\begin{align*}
+  n    &= 2k + 1 \\
+  n^{2}   &= (2k + 1)^{2} \\
+       &= 4k^{2} + 4k + 1 \\
+  n^{2} &= 2(2k^{2} + 2k) + 1
+\end{align*}
+Theorem: If $n^{2}$ is even, then n is even. Proof(contrapositive): If $n$ is odd, then $n^{2}$ is odd. Let $n = 2k + 1$ for some integer k. Then $n^{2} = 4k^{2} + 4k + 1 = 2(2k^{2} + 2k) + 1$, which is odd. Hence $n^{2}$ forces $n$ even. $\blacksquare$ \\
+\newline
+Theorem: If $n^{2}$ is even, then $n$ is even. ($n^{2}$ even $\implies n$ even, $n \in \mathbb{Z}$) \\
+Proof (contrapositive): If $n$ is odd, $n^{2}$ is odd. Let $n \in \mathbb{Z}$, then from the definition of an odd number, for some $k \in \mathbb{Z}$,
+\[
+  n = 2k + 1 
+\]
+Therefore,
+\begin{align*}
+  n^{2} &= (2k + 1)^{2} \\
+     &= 4k^{2} + 4k + 1 \\
+     &= 2(2k^{2} + 2k) + 1
+\end{align*}
+Since $(2k^{2} + 2k) \in \mathbb{Z}$, $n^{2}$ is odd. Thus the contrapositive is true, if $n^{2}$ is even, then $n$ is even.
+
+Theorem: $n^{2}$ even $\implies n$ even, $n \in \mathbb{Z}, \therefore \neg n$ even $\implies \neg n^{2}$ even,
+where $\neg n$ even $\iff n$ odd. $\therefore n$ odd $\implies n^{2}$ odd. $\blacksquare$
+
+
+\newpage
+\section{Questions}
+\begin{enumerate}
+  \item Spot the flaw: Claim $2 = 1$. Let $a = b$. Then $a^{2} = ab$ so $a^{2} - b^{2} = ab - b^{2}$, so $(a + b)(a - b) = b(a - b)$.
+    Dividing both sides by $a - b: a + b = b$. Since $a = b: 2b = b$ so $2 = 1$ \\
+    The obvious flaw in this logic is the division by $a - b$, which while $a = b$ means that we are dividing by 0.
+
+  \item Theorem: If $n^{3}$ is even, $n$ is even. \\ 
+    Proof (contrapositive): If $n$ is odd, then $n^{3}$ is odd. 
+    Using the definition of an odd number, let $n = 2k + 1$, where $n,k \in \mathbb{Z}$. 
+    \begin{align*}
+      n^{3} &= (2k + 1)^{3} \\
+         &= (2k + 1)(2k + 1)(2k + 1) \\
+         &= 8k^{3} + 12k^{2} + 6k  + 1 \\
+         &= 2(4k^{3} + 6k^{2} + 3k) + 1 
+    \end{align*}
+    Plugging 1 into the equation,
+    \[
+      2(4(1)^{3} + 6(1)^{2} + 3(1)) + 1 = 2(13) + 1 = 27
+    \]
+    Since $(4k^{3} + 6k^{2} + 3) \in \mathbb{Z}$, $n^{3}$ is odd. Thus the contrapositive is true, if $n^{3}$ is even, $n$ is even. $\blacksquare$
+
+  \item Theorem: The sum of two odd integers is even. \\
+    Proof (direct): Let $a, b \in 2 \mathbb{Z} + 1$
+    By definition of odd numbers,  $a = 2k + 1$ and $b = 2m + 1$ for some $k, m \in \mathbb{Z}$
+    \begin{align*}
+      a + b &= (2k + 1) + (2m + 1)\\
+            &= 2k + 2m + 2 \\
+            &= 2(k + m + 1)
+    \end{align*}
+    $k, m \in \mathbb{Z} \implies k + m + 1 \in \mathbb{Z}$, so $2(k + m + 1)$ must be even $\therefore a + b$ is even, 
+    so the sum of two odd numbers is even. $\blacksquare$
+
+  \item Theorem: There is no largest even integer. \\
+    Proof (contradiction): Suppose we have the largest $n \in 2 \mathbb{Z}$. 
+    Since $n$ is even, $n = 2k$ for some $k \in \mathbb{Z}$. Consider the integer $n + 2$:
+    \[
+      n + 2 = 2k + 2 = 2(k + 1)
+    \]
+    Since $k + 1 \in \mathbb{Z}$, $n + 2 \in 2 \mathbb{Z}$. Furthermore, because $2 > 0$, we have $n + 2 > n$.
+    This means that $n + 2 \in \mathbb{Z}$ and $n + 2 > n$, which contradicts our assumption that $n$ is the largest $\in \mathbb{Z}$.
+    $\therefore$ There is no largest even integer. $\blacksquare$ 
+
+  \item State the converse of $n > 2 \implies n^{2} > 4$ and decide if it is true - proof or counterexample. \\
+    The converse is $n^{2} > 4 \implies n > 2$.\\
+    Theorem: The statement $n^{2} > 4 \implies n > 2 $ is false. 
+    Proof (counterexample): Let $n \in \mathbb{R}$, suppose $n = -3$ then $(-3)^{2} = 9$ which > 4, so $n^{2} > 4$.
+    However, $-3 \le 2$, so $n \le 2$, $\therefore n^{2} > 4 \not \implies n > 2$. $\blacksquare$
+
+
+\end{enumerate}
+
+\section{Format testing}
+\begin{enumerate}
+  % Q2
+  \item \textbf{Theorem:} If $n^{3}$ is even, $n$ is even
+
+    \textbf{Proof (contrapositive):} If $n$ is odd, $n^{3}$ is odd. Let $n \in \mathbb{Z}$ By definition of odd numbers,
+    \[
+      n = 2k + 1 \quad\text{for some } k \in \mathbb{Z}
+    \]
+    So for $n^{3}$,
+    \begin{align*}
+      n^{3} &= (2k + 1)^{3} \\
+            &= (2k + 1)(2k + 1)(2k + 1) \\
+            &= 8k^{3} + 12k^{2} + 6k + 1 \\
+            &= 2(4k^{3} + 6k^{2} + 3k) + 1
+    \end{align*}
+    Since $k \in \mathbb{Z}$ and integers are closed under addition and multiplication, 
+    \[
+      4k^{3} + 6k^{2} + 3k \in \mathbb{Z}
+    \]
+    Let $m = 4k^{3} + 6k^{2} + 3k$. Then $m \in \mathbb{Z}$ and
+    \[
+      n^{3} = 2m + 1
+    \]
+    By definition of an odd integer $n$ is odd. $n$ being odd $\implies n^{3}$ is odd. 
+    This proves the contrapositive, $n^{3}\implies n$
+    \hfill$\blacksquare$
+    
+
+  % Q3
+  \item \textbf{Theorem:} The sum of two odd integers is even.
+
+    \textbf{Proof (direct):}
+    Let $a,b \in \mathbb{Z}$ be odd. By definition of odd numbers, 
+    \[
+      a = 2k + 1
+      \quad\text{and}\quad
+      b = 2m + 1
+    \]
+    for some $k,m \in \mathbb{Z}$
+
+    \begin{align*}
+      a + b
+      &= (2k + 1) + (2m + 1) \\
+      &= 2k + 2m + 2 \\
+      &= 2(k + m + 1)
+    \end{align*}
+
+    Since $k,m \in \mathbb{Z}$ and integers are closed under addition, 
+    \[
+      k + m + 1 \in \mathbb{Z} 
+    \]
+     
+    Let $n = k + m + 1$. Then $n \in \mathbb{Z}$ and
+    \[
+      a + b = 2n
+    \]
+    By definition of an even integer, $a + b$ is even. $\therefore$ the sum of two odd integers is always even.
+    \hfill$\blacksquare$
+   
+  \item \textbf{Theorem:} There is no largest even integer.
+
+    \textbf{Proof (contradiction):} Suppose we have the largest even integer $n$. Since $n$ is even,
+    \[
+      n = 2k \text{ for some } k \in \mathbb{Z}
+    \]
+    Consider the integer $n + 2$,
+    \[
+      n + 2 = 2k + 2 = 2(k + 1)
+    \]
+    Since $k + 1 \in \mathbb{Z} \implies n + 2 \in \mathbb{Z}$
+
+\end{enumerate}
+
+
+\end{document}

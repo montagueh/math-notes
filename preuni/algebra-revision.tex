@@ -1,0 +1,240 @@
+
+\documentclass{article}
+
+%--- Document Formatting ---%
+\usepackage{lmodern} % gives you the more modern Latin Modern fonts
+\usepackage[T1]{fontenc} % fontenc provides better and more character encoding
+\usepackage[margin=3cm]{geometry} % geometry allows changing page sizes, orientation and margin
+\usepackage{microtype}
+
+\usepackage{titlesec} % titlesec allows changing the style, spacing and font of chapter, sections and subsections
+% {left-indent}{space before}{space after}
+\titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
+\linespread{1.2}
+
+
+%--- Language ---%
+\usepackage[australian]{babel}
+\usepackage[useregional]{datetime2}
+
+
+%--- Symbols ---%
+\usepackage{amssymb} % amssymb provides symbols, mainly number systems
+\usepackage{cancel} % adds \cancel{x}, allowing striking out derivations
+%\usepackage{siunitx} % used for physics based units
+
+
+%--- Tools and General Formatting ---%
+\usepackage{mathtools} % an extension for amsmath, loads amsmath itself
+\usepackage{amsthm} % improves proof based math
+\usepackage{enumitem} % enumitem gives more control over lists
+
+%\usepackage{graphicx} % use to include images/figures
+%\usepackage{xcolor} % for colour
+%\usepackage[hidelinks]{hyperref} % adds hyperlinks, can sometimes cause issues. Keep last
+%\usepackage{cleveref} % extension for hyperref, auto formatted cross-reference
+
+
+\addtolength{\jot}{1em} % Increases row separation locally
+
+\begin{document}
+
+\title{Algebra Revision}
+\author{Montague Hamilton}
+\date{\today}
+\maketitle
+
+\section{Audit}
+\subsection{Indices}
+\begin{enumerate}
+  \item Simplify:
+    \begin{enumerate}[label=\alph*)]
+    \item \begin{align*}
+        2^{5} \cdot 2^{-3} \div 2^{4} &= 2^{5-3-4} \\
+                      &= 2^{-2}
+      \end{align*}
+    \item \begin{align*}
+        (x^{3})^{2} \cdot x^{-4} &= x^{3 \cdot 2}\cdot x^{-4} \\
+                    &= x^{6 - 4} \\
+                    &= x^{2}
+      \end{align*}
+  \end{enumerate}
+  \item Evaluate, no calculator:
+    \begin{enumerate}[label=\alph*)]
+      \item $27^{\frac{2}{3}} = \sqrt[3]{27^{2}} = \sqrt[3]{729} = 9$
+      
+      \item \begin{align*}
+          \left(\frac{1}{16} \right)^{\frac{-3}{4}} &= \left(\frac{16}{1} \right)^{\frac{3}{4}} \\
+          &= \left(2^{4} \right)^{\frac{3}{4}} = 2^{3} \\
+          &= 8 % Took quite a while with this one, forgot the underlying rule, not tied to understanding
+        \end{align*}
+
+    \item $4^{\frac{-1}{2}} = \sqrt[2]{4^{-1}} = \sqrt[2]{\frac{1}{4}} = \frac{1}{2}$
+    \end{enumerate}
+
+  \item Expand and simplify:
+  \begin{enumerate}[label=\alph*)]
+    \item \begin{align*}
+        (x + 3)(x - 5) &= x^{2} - 5x + 3x - 15 \\
+                        &= x^{2} -2x -15
+      \end{align*}
+
+    \item \begin{align*}
+        (2x - 1)^{2} &= (2x - 1)(2x - 1) \\
+                  &= 4x^{2} - 2x - 2x + 1 \\
+                  &= 4x^{2} - 4x + 1
+      \end{align*}
+  \end{enumerate}
+
+  \item Factorize:
+    \begin{enumerate}[label=\alph*)]
+      \item $x^{2} - 9 = (x + 3)(x - 3)$
+      \item $x^{2} + 5x + 6 = (x + 2)(x + 3)$
+      \item $6x^{2} + x - 2 = (3x + 2)(2x - 1)$
+    \end{enumerate}
+
+  \item Factorize Completely: 
+    \begin{align*}
+      x^{3} - x &= x(x^{2} - 1) \\
+      &= x((x + 1)(x - 1))
+    \end{align*}
+    
+
+
+  \item Solve, giving all solutions:
+    \begin{align*}
+      x^{2} &= 5x \\
+      x  &= \pm5
+    \end{align*}
+    Attempt 2:
+    \begin{align*}
+      2x^{2} &= 5x \\
+      2x^{2} - 5x &= 0 \\
+      x(2x - 5) &= 0 
+    \end{align*}
+    
+
+    \item Solve:
+    \begin{align*}
+      x^{2} + 2x - 8 &= 0 \\
+      (x + 4)(x - 2) &= 0
+    \end{align*}
+    The quadratic has x intercepts at $(0, -2)$ and $(0, 4)$
+    Attempt 2:
+    Assuming the intercepts are at $(-2, 0)$ and $(4, 0)$
+    \begin{align*}
+      (-2)^{2} + 2(-2) -8 &= 0 \\
+      4 - 4 - 8 &\neq 0
+    \end{align*}
+    My factorize term under expansion:
+    \begin{align*}
+      (x + 4)(x - 2) &= 0 \\
+      x^{2} - 2x + 4x - 8 &= 0 \\
+      x^{2} + 2x - 8 &= 0 
+    \end{align*}
+    So the factorized term is correct, at second glance, coordinates should be $(-4, 0)$ and $(2, 0)$, testing:
+    \begin{align*}
+      (-4)^{2} + 2(-4) - 8 &= 0 \\
+      16 - 8 - 8 &= 0 \\
+      0 &= 0
+    \end{align*}
+    So that one works, testing the next one:
+    \begin{align*}
+      (2)^{2} + 2(2) - 8 &= 0
+      4 + 4 - 8 &= 0 \\
+      0 &= 0
+    \end{align*}
+    Finding the y intercept:
+    \begin{align*}
+      y &= (0)^{2} + 2(0) - 8 \\
+      y &= 0 + 0 - 8 \\
+      y &= -8
+    \end{align*}
+    So the y intercept is at $(0, -8)$
+    
+    
+  \item Make $h$ the subject:
+    \begin{align*}
+       V &= \frac{1}{3} \pi \cdot r^{2} \cdot h \\
+      h &= \frac{3 V}{\pi \cdot r^{2}}
+    \end{align*}
+
+  \item Solve simultaneously:
+    \begin{equation}
+      x + y = 7
+    \end{equation}
+    \begin{equation}
+      2x - 3y = 4
+    \end{equation}
+    \begin{align*}
+      (1) x + y &= 7 \\
+      x &= -y + 7 \\
+      y &= -x + 7
+    \end{align*}
+    Sub (1) into (2), first solving $y$, then $x$: 
+    \begin{align*}
+      2(-y + 7) - 3y &= 4 \\
+      -2y + 14 -3y &= 4 \\
+      -5y &= -10 \\
+      y &= 2
+    \end{align*}
+    \begin{align*}
+      2x - 3(-x + 7) &= 4 \\
+      2x + 3x - 21 &= 4 \\
+      5x &= 25 \\
+      x &= 5
+    \end{align*}
+    We can then confirm, first (1) then (2):
+    \begin{align*}
+      (5) + (2) &= 7 \\
+       7 &= 7 \\
+      \text{and} \\
+      2(5) - 3(2) &= 4 \\
+      10 - 6 &= 4 \\
+      4 &= 4
+    \end{align*}
+
+  \item Simplify: $\frac{x^{2} - 4}{x -2} = x - 2$ where $x \neq 2$
+    Attempt 2: First factor $x^{2} - 4$:
+    \begin{equation}
+      x^{2} - 4 = (x + 2)(x - 2)
+    \end{equation}
+    Then sub into original problem:
+    \begin{align*}
+      && \frac{x^{2} - 4}{x - 2} &= \frac{(x + 2)(x - 2)}{x - 2} \\
+      && \frac{(x + 2)\cancel{(x - 2)}}{\cancel{x - 2}} &= x + 2 && \text{where } x \neq 2 
+    \end{align*}
+    
+    
+
+  \item Express as a single fraction: $\frac{1}{x} + \frac{1}{x + 1} = \frac{2}{2x + 1}$ \\
+    Attempt 2: $x \cdot (x + 1) = x^{2} + x$
+    \begin{align*}
+      \frac{1}{x} + \frac{1}{x + 1} &= \frac{x + 1}{x^{2} + x} + \frac{x}{x^{2} + x} \\
+      &= \frac{2x + 1}{x^{2} + x}
+    \end{align*}
+    
+
+  \item Rationalize the denominator: $\frac{2}{\sqrt[2]{3} - 1} = \frac{4}{3 + 1} = 1$ \\
+    Attempt 2, focusing on the denominator first: 
+    \begin{align*}
+      && (\sqrt[2]{3} - 1)^{2} &= 3 - \sqrt[2]{3} - \sqrt[2]{3} + 1 && \text{not the one} \\
+      && (\sqrt[2]{3} - 1)(\sqrt[2]{3} + 1) &= 3 + \sqrt[2]{3} - \sqrt[2]{3} - 1 && \text{this is the one}
+    \end{align*}
+    Now for the actual equation:
+    \begin{align*}
+      \frac{2}{\sqrt[2]{3} - 1} &= \frac{2}{\sqrt[2]{3} - 1} \cdot \frac{\sqrt[2]{3} + 1}{\sqrt[2]{3} + 1} \\
+      \text{sub from above} &= \frac{2(\sqrt[2]{3} + 1)}{2} \\
+      \frac{\cancel{2}(\sqrt[2]{3} + 1)}{\cancel{2}} &= \sqrt[2]{3} + 1
+    \end{align*}
+    checking, subbing $\sqrt[2]{3}$ for 1.73:
+    \begin{align*}
+      \frac{2}{1.73 - 1} &\approx 2.74 \\
+      1.73 + 1 &\approx 2.73 \approx 2.74
+    \end{align*}
+    
+    
+
+\end{enumerate}
+\end{document}
