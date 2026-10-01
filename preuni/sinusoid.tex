@@ -1,0 +1,67 @@
+
+\documentclass{article}
+
+%--- Document Formatting ---%
+\usepackage{lmodern} % gives you the more modern Latin Modern fonts
+\usepackage[T1]{fontenc} % fontenc provides better and more character encoding
+\usepackage[margin=3cm]{geometry} % geometry allows changing page sizes, orientation and margin
+\usepackage{microtype}
+\usepackage{parskip} % better spacing between paragraphs
+\usepackage{titling} % makes the title closer to the top
+\setlength{\droptitle}{-5em}
+
+\usepackage{titlesec} % titlesec allows changing the style, spacing and font of chapter, sections and subsections
+% {left-indent}{space before}{space after}
+\titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
+\linespread{1.4}
+
+
+%--- Language ---%
+\usepackage[australian]{babel}
+\usepackage[useregional]{datetime2}
+
+
+%--- Symbols ---%
+\usepackage{amssymb} % amssymb provides symbols, mainly number systems
+\usepackage{cancel} % adds \cancel{x}, allowing striking out derivations
+%\usepackage{siunitx} % used for physics based units
+
+
+%--- Tools and General Formatting ---%
+\usepackage{mathtools} % an extension for amsmath, loads amsmath itself
+\usepackage{amsthm} % improves proof based math
+\usepackage{enumitem} % enumitem gives more control over lists
+
+%\usepackage{graphicx} % use to include images/figures
+%\usepackage{xcolor} % for colour
+%\usepackage[hidelinks]{hyperref} % adds hyperlinks, can sometimes cause issues. Keep last
+%\usepackage{cleveref} % extension for hyperref, auto formatted cross-reference
+
+
+
+\begin{document}
+
+\title{Sinusoid}
+\author{Montague Hamilton}
+\date{\today}
+\maketitle
+
+\section{Questions}
+\begin{enumerate}
+  \item
+    \[
+    h(t) = c + a \sin\left(\frac{2\pi t}{p} + \phi \right)
+    \]
+ For a wheel centred at height 4, radius 3, period 12; the rider starts at the top. At t = 3,
+ \begin{align*}
+ h(t) &= 4 + 3 \sin \left(\frac{2 \pi 3}{12} + \frac{\pi}{2} \right) \\
+   &= 4 + 3 \sin(\pi) \\
+   &= 4
+ \end{align*}
+ So at the same level as the wheels centre.
+
+\end{enumerate}
+
+
+\end{document}
