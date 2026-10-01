@@ -4,9 +4,9 @@
 %--- Document Formatting ---%
 \usepackage{lmodern} % gives you the more modern Latin Modern fonts
 \usepackage[T1]{fontenc} % fontenc provides better and more character encoding
-\usepackage[margin=3cm]{geometry} % geometry allows changing page sizes, orientation and margin
+\usepackage[margin=2.5cm, bottom=4cm, top=3cm, footskip=2cm]{geometry} % geometry allows changing page sizes, orientation and margin
 \usepackage{microtype}
-\usepackage{parskip} % better spacing between paragraphs
+\usepackage[skip=12pt]{parskip} % better spacing between paragraphs
 \usepackage{titling} % makes the title closer to the top
 \setlength{\droptitle}{-5em}
 
@@ -14,8 +14,16 @@
 % {left-indent}{space before}{space after}
 \titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
-\linespread{1.4}
+\linespread{1.2}
 
+% Set distances between equations and text
+\setlength{\jot}{10pt} % Distance between equations
+\AtBeginDocument {
+\setlength{\abovedisplayskip}{18pt}
+\setlength{\belowdisplayskip}{18pt}
+\setlength{\abovedisplayshortskip}{12pt}
+\setlength{\belowdisplayshortskip}{12pt}
+}
 
 %--- Language ---%
 \usepackage[australian]{babel}
@@ -48,7 +56,7 @@
 \maketitle
 
 \section{Questions}
-\begin{enumerate}
+\begin{enumerate}[itemsep=20pt]
   \item
     \[
     h(t) = c + a \sin\left(\frac{2\pi t}{p} + \phi \right)
@@ -63,23 +71,24 @@
 
 \item \textbf{Describe fully (amplitude, midline, period): $y = 5\sin(2x) - 1$}
 
-   The midline is $-1$, so the function starts at $-1$ and centres around it.
-
-   The amplitude is 5, so the function reaches $5$ heigher and $5$ lower than midline.
-   So the maximum would be $4$ and the minimum would be $-6$.
-
+   The midline is $-1$, so the function starts at $-1$ and centres around it. 
+   The amplitude is 5, so the function reaches $5$ heigher and $5$ lower than midline. 
+   So the maximum would be $4$ and the minimum would be $-6$. 
    The period is $\pi$, so the function repeats twice for every increase in $x$.
 
 
  \item \textbf{Convert a period of 6 seconds -- what is the angular frequency? 
    And what phase $\phi$ describes a rider who starts at the midline and moves downwards?}
 
-   Frequency is the inverse of the period, so
-    \begin{align*}
-      f &= \frac{2\pi}{p} \\
-      f &= \frac{\pi}{3}
-    \end{align*}
-   The two simpliest phases that work for a rider starting at the midline and moving downwards is $\pm \frac{\pi}$
+   The angular frequency is defined,
+    \[
+       \omega = \frac{2\pi}{p}
+    \]
+    Thus,
+    \[
+      \omega = \frac{\pi}{3}
+    \]
+   The two simpliest phases that work for a rider starting at the midline and moving downwards is $\pm \pi$
       
  \item \textbf{True or false with a reason: doubling a wheel's amplitude doubles its period?}
 
