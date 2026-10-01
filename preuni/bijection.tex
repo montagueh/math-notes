@@ -1,18 +1,59 @@
+
 \documentclass{article}
-\usepackage[T1]{fontenc}
-%\usepackage{gensymb}
-%\usepackage{microtype}
-\usepackage[margin=3cm]{geometry}
-\usepackage{lmodern}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{titlesec}
-\usepackage{enumitem}
+
+%--- Document Formatting ---%
+\usepackage{lmodern} % gives you the more modern Latin Modern fonts
+\usepackage[T1]{fontenc} % fontenc provides better and more character encoding
+\usepackage[margin=2.5cm, bottom=4cm, top=3cm, footskip=2cm]{geometry} % geometry allows changing page sizes, orientation and margin
+\usepackage{microtype}
+\usepackage[skip=8pt]{parskip} % better spacing between paragraphs
+\usepackage{titling} % makes the title closer to the top
+\setlength{\droptitle}{-5em}
+
+\usepackage{titlesec} % titlesec allows changing the style, spacing and font of chapter, sections and subsections
 % {left-indent}{space before}{space after}
-\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
 \titlespacing*{\section}{0pt}{6ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\linespread{1.2}
+\titlespacing*{\subsection}{0pt}{2.5em plus 1ex minus .2ex}{2ex plus .2ex}
+\linespread{1.15}
+
+% Set distances between equations and text
+\setlength{\jot}{8pt} % Distance between equations
+\AtBeginDocument {
+\setlength{\abovedisplayskip}{18pt}
+\setlength{\belowdisplayskip}{18pt}
+\setlength{\abovedisplayshortskip}{12pt}
+\setlength{\belowdisplayshortskip}{12pt}
+}
+
+%--- Language ---%
+\usepackage[australian]{babel}
+\usepackage[useregional]{datetime2}
+
+
+%--- Symbols ---%
+\usepackage{amssymb} % amssymb provides symbols, mainly number systems
+\usepackage{cancel} % adds \cancel{x}, allowing striking out derivations
+%\usepackage{siunitx} % used for physics based units
+
+
+%--- Tools and General Formatting ---%
+\usepackage{mathtools} % an extension for amsmath, loads amsmath itself
+\usepackage{amsthm} % improves proof based math
+\usepackage{enumitem} % enumitem gives more control over lists
+
+%\usepackage{graphicx} % use to include images/figures
+%\usepackage{xcolor} % for colour
+%\usepackage[hidelinks]{hyperref} % adds hyperlinks, can sometimes cause issues. Keep last
+%\usepackage{cleveref} % extension for hyperref, auto formatted cross-reference
+
+
+
 \begin{document}
+
+\title{Bijection}
+\author{Montague Hamilton}
+\date{\today}
+\maketitle
 
 \section{Bijection}
 \subsection{Bijection Problem}
