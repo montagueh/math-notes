@@ -73,9 +73,12 @@ So for the function $f(x) = x^{2}$,
 
 For function $f(x) = \sqrt[2]{x}$,
 \begin{align*}
-  f'(x) &= \frac{\sqrt[2]{x+h} - \sqrt[2]{x}{h} \\
+  f'(x) &= \frac{\sqrt[2]{x+h} - \sqrt[2]{x}}{h} \\
         &= \frac{\sqrt[2]{x+h} - \sqrt[2]{x}}{h} \cdot \frac{\sqrt[2]{x+h} + \sqrt[2]{x}}{\sqrt[2]{x+h} + \sqrt[2]{x}} \\
-        &= \frac{\cancel{x} + h - \cancel{x}}{h(\sqrt[2]{x+h} + \sqrt[2]{x})}
+        &= \frac{\cancel{x} + h - \cancel{x}}{h(\sqrt[2]{x+h} + \sqrt[2]{x})} \\
+        &= \frac{\cancel{h}}{\cancel{h}(\sqrt[2]{x+h} + \sqrt[2]{x})} \\
+        &= \frac{1}{\sqrt[2]{x+h}+\sqrt[2]{x}} \\
+  \lim_{h \to 0} f'(x) &= \frac{1}{2 \sqrt[2]{x}}
 \end{align*}
 
 
